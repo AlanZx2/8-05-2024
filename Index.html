@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nuestro Primer Año</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      /* Fondo de corazones */
+      background: url('https://img.freepik.com/vector-gratis/papel-pintado-patron-corazon-pequeno-lindo-impresion-tejidos-textiles_1017-49356.jpg') center center / cover no-repeat fixed;
+      color: #333;
+    }
+
+    .pantalla-inicio {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      /* Capa semitransparente para mejorar legibilidad */
+      background-color: rgba(255, 204, 213, 0.9);
+      padding: 20px;
+    }
+
+    .pantalla-inicio h1 {
+      font-size: 3em;
+      color: #d6336c;
+      margin: 0.2em 0;
+    }
+
+    .foto-principal {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      margin: 20px 0;
+    }
+
+    .boton {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background-color: #d6336c;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .boton:hover {
+      background-color: #b3244b;
+    }
+
+    .contenido {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+      text-align: center;
+      /* Capa semitransparente para el contenido */
+      background-color: rgba(255, 240, 245, 0.9);
+    }
+
+    .contenido h2 {
+      font-size: 2.5em;
+      color: #d6336c;
+      margin-bottom: 0.5em;
+    }
+
+    .contenido p {
+      max-width: 600px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .contenido.animado {
+      animation: fadeIn 1s ease-out forwards;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="pantalla-inicio" id="inicio">
+    <h1>Nuestro primer año</h1>
+    <img src="80352dde661b3cfe51de43bed8d75b24.jpg" alt="Nosotros" class="foto-principal">
+
+    <audio id="musica" controls>
+      <source src="Trueno - SOLO POR VOS (Video Oficial)-yt.savetube.me.mp3" type="audio/mpeg">
+      Tu navegador no soporta el audio.
+    </audio>
+
+    <button class="boton" onclick="mostrarContenido()">Empezar</button>
+  </div>
+
+  <div class="contenido" id="contenido">
+    <h2>Nuestro primer año</h2>
+    <p>Chaparrita, no sé ni por dónde empezar… Parece increíble, pero ya pasó un año. 12 meses contigo. Y aunque a veces solo tengamos ratitos, esos momentos a tu lado se han convertido en lo mejor de mi día, de mi semana… de todo.</p>
+    <p>Estar contigo me ha enseñado a valorar los pequeños instantes: una sonrisa tuya, una conversación sencilla, un abrazo corto pero que me deja el corazón lleno. No necesito grandes cosas cuando estás cerca, porque tú haces que hasta lo más simple se sienta especial.</p>
+    <p>Este primer año me hace muy feliz. No dejo de pensar en cómo llegamos hasta aquí, en todo lo que hemos compartido, lo que hemos aprendido el uno del otro, y lo que todavía nos espera. Me emociona saber que esto apenas empieza… que todavía nos queda mucho por vivir, por crecer y por querernos.</p>
+    <p>Gracias por ser tú, por dejarme ser parte de tu mundo, por tu cariño, tu ternura y por cada momento que hemos construido. No sabes cuánto te valoro, y cuánto te quiero.</p>
+    <p>Feliz primer año, Chaparrita. Contigo, todo vale la pena.</p>
+  </div>
+
+  <script>
+    function mostrarContenido() {
+      const inicio = document.getElementById('inicio');
+      const contenido = document.getElementById('contenido');
+      const musica = document.getElementById('musica');
+
+      inicio.style.display = 'none';
+      contenido.style.display = 'flex';
+      contenido.classList.add('animado');
+
+      // Iniciar la música automáticamente
+      musica.play().catch(e => {
+        console.log('La reproducción automática fue bloqueada.');
+      });
+    }
+  </script>
+
+</body>
+</html>
